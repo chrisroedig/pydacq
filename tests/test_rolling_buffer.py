@@ -2,13 +2,13 @@ import unittest
 import random
 import numpy as np
 import threading
-import libs.rolling_buffer 
+import pydacq.rolling_buffer 
 import time
 
 class TestRollingBuffer( unittest.TestCase ):
 
   def setUp( self ):
-    self.rbuffer = libs.rolling_buffer.RollingBuffer()
+    self.rbuffer = pydacq.rolling_buffer.RollingBuffer()
     self.rbuffer.reset( 100, ( 50, 50 ) )
     pass
 

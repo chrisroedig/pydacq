@@ -1,5 +1,5 @@
-import libs.rolling_buffer
-import libs.polling_acquisition
+import pydacq.rolling_buffer
+import pydacq.polling_acquisition
 
 import time
 import socket

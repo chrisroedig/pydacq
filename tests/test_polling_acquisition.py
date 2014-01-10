@@ -1,6 +1,6 @@
 import unittest
 import threading
-import libs.polling_acquisition
+import pydacq.polling_acquisition
 import time 
 #test_polling_acquisition.py
 
@@ -10,7 +10,7 @@ class TestPollingAcquisition( unittest.TestCase ):
   Rolling np.array with thread safe access
   """ 
   def setUp( self ):
-    self.pacq = libs.polling_acquisition.PollingAquisition()
+    self.pacq = pydacq.polling_acquisition.PollingAquisition()
     self.pacq.setup()
     pass
 

@@ -1,6 +1,6 @@
 # example that displays a rolling graph of random numbers
-import libs.rolling_buffer
-import libs.polling_acquisition
+import pydacq.rolling_buffer
+import pydacq.polling_acquisition
 import time
 
 from pyqtgraph.Qt import QtGui, QtCore
@@ -46,12 +46,14 @@ Poller.write = write_buffer
 Poller.start()
 
 randplot = win.addPlot(title="Data")
-curve = randplot.plot(pen='y')
+curve1 = randplot.plot(pen='y')
+curve2 = randplot.plot(pen='r')
 
 
 def update():
     ts_arr, data_arr = Buffer.get_all()
-    curve.setData( data_arr[:,0] )
+    curve1.setData( data_arr[:,0] )
+    curve2.setData( data_arr[:,1] )
 
 timer = QtCore.QTimer()
 timer.timeout.connect(update)
